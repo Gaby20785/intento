@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package distraccion;
+
+option go_package = "/distraccion";
+
+service Distraccion {
+    rpc IniciarDistraccion (DistraccionRequest) returns (DistraccionResponse);
+}
+
+message DistraccionRequest {
+    int32 probExito = 1;
+}
+
+message DistraccionResponse {
+    bool confirmacion = 1;
+    bool exito = 2;
+    string motivo = 3;
+}
+

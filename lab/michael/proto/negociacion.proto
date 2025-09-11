@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package negociacion;
+
+option go_package = "/negociacion";
+
+service Negociacion {
+    rpc SolicitarContrato (ContratoRequest) returns (ContratoResponse);
+    rpc AceptarContrato (DecisionRequest) returns (DecisionResponse);
+    rpc RechazarContrato (DecisionRequest) returns (DecisionResponse);
+}
+
+// Solicitar contrato
+message ContratoRequest {}
+
+message ContratoResponse {
+    int32 botin = 1;
+    int32 probExitoFranklin = 2;
+    int32 probExitoTrevor = 3;
+    int32 riesgoPolicial = 4;
+}
+
+//Aceptar o rechazar contrato
+message DecisionRequest {}
+message DecisionResponse {}

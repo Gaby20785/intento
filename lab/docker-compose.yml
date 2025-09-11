@@ -1,0 +1,26 @@
+services:
+  lester:
+    build: ./lester
+    container_name: lester_container
+    ports:
+      - "50051:50051"
+
+  michael:
+    build: ./michael
+    container_name: michael_container
+    depends_on:
+      - lester
+      - franklin
+      - trevor
+
+  franklin:
+    build: ./franklin
+    container_name: franklin_container
+    ports:
+      - "50052:50052"
+
+  trevor:
+    build: ./trevor
+    container_name: trevor_container
+    ports:
+      - "50053:50053"
