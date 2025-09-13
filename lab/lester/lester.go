@@ -15,6 +15,7 @@ import (
 	"google.golang.org/grpc"
 )
 
+
 // Asegura compatibilidad si se añaden más RPCs al servicio.
 type servidor struct {
 	pb1.UnimplementedNegociacionServer
